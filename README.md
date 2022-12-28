@@ -1,4 +1,4 @@
 # Junmin's `init.lua`
 
-Thanks to [ThePrimeagen](/ThePrimeagen)!
+Thanks to [ThePrimeagen](https://github.com/ThePrimeagen)!
 
