@@ -1,55 +1,78 @@
+local keymap = vim.keymap
+
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- netrw
+keymap.set("n", "<leader>fv", vim.cmd.Ex)
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- delete character and not copy into the register
+keymap.set("n", "x", '"_x')
 
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+-- highlighted line movement
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- cursor remain in place when appending
+keymap.set("n", "J", "mzJ`z")
+
+-- halfpage jumping cursor in the middle of the screen
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- allows search term to stay in the middle of the screen
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
+
+-- delete highlighted word into the void register so it will not be on the clipboard when yanking
+keymap.set("x", "<leader>p", [["_dP]])
+
+-- copying and deleting in the global clipboard so yank in vim and global are separated
+keymap.set({"n", "v"}, "<leader>y", [["+y]])
+keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set("n", "<leader>Y", [["+Y]])
 
 -- escape
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("i", "jk", "<Esc>")
-vim.keymap.set("i", "kj", "<Esc>")
+keymap.set("i", "<C-c>", "<Esc>")
+keymap.set("i", "jk", "<Esc>")
+keymap.set("i", "kj", "<Esc>")
 
 -- better tabbing
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
 
 -- save
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
+keymap.set("n", "<C-s>", "<cmd>w<CR>")
 
 -- quit
-vim.keymap.set("n", "<C-Q>", "<cmd>q!<CR>")
+keymap.set("n", "<C-Q>", "<cmd>q!<CR>")
 
 -- better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+keymap.set("n", "<C-h>", "<C-w>h")
+keymap.set("n", "<C-j>", "<C-w>j")
+keymap.set("n", "<C-k>", "<C-w>k")
+keymap.set("n", "<C-l>", "<C-w>l")
 
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+-- tmux
+keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- quickfix navigation
+keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- search and replace the word you are currently on cursor
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- make bash executable
+keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- remove highlight on last search
-vim.keymap.set('n', '<cr>', function() vim.cmd('noh') end)
+keymap.set("n", "<cr>", ":nohl<CR>")
+
+-- splitting window
+keymap.set("n", "<leader>wv", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>wh", "<C-w>s") -- split window horizontally

@@ -1,6 +1,5 @@
-function ColorMyPencils(color)
-	color = color or "rose-pine"
-	vim.cmd.colorscheme(color)
+local status, _ = pcall(vim.cmd, "colorscheme rose-pine")
+if not status then
+    print("Colorscheme not found!")
+    return
 end
-
-ColorMyPencils()

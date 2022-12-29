@@ -1,28 +1,47 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local opt = vim.opt
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- line numbers
+opt.nu = true
+opt.relativenumber = true
 
-vim.opt.smartindent = true
+-- tabs and indentation
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.autoindent = true
+opt.smartindent = true
 
-vim.opt.wrap = false
+-- line wrapping
+opt.wrap = false
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+-- search settings 
+opt.ignorecase = true
+opt.smartcase = true
+opt.incsearch = true
 
-vim.opt.incsearch = true
+-- buffer settings
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.undodir"
+opt.undofile = true
 
-vim.opt.termguicolors = true
+-- appearance
+opt.termguicolors = true
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+opt.colorcolumn = "80"
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+-- backspace 
+opt.backspace = "indent,eol,start"
 
-vim.opt.updatetime = 50
+-- navigation
+opt.scrolloff = 8
 
-vim.opt.colorcolumn = "80"
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
+
+opt.updatetime = 50
+
+opt.iskeyword:append("-")
