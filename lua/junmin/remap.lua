@@ -5,6 +5,9 @@ vim.g.mapleader = " "
 -- netrw
 keymap.set("n", "<leader>fv", vim.cmd.Ex)
 
+-- copy file path
+keymap.set("n", "<leader>cp", "<cmd>Cppath<CR>")
+
 -- delete character and not copy into the register
 keymap.set("n", "x", '"_x')
 

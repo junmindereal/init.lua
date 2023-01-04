@@ -150,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["neo-tree.nvim"] = {
-    config = { "\27LJ\2\n€\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\1\nwidth\3P\1\0\2\25close_if_last_window\2\22enable_git_status\2\nsetup\rneo-tree\frequire\0" },
+    config = { "\27LJ\2\n€\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\1\nwidth\3P\1\0\2\22enable_git_status\2\25close_if_last_window\2\nsetup\rneo-tree\frequire\0" },
     loaded = true,
     path = "/Users/junmindereal/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
@@ -237,7 +237,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
-try_loadstring("\27LJ\2\n€\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\1\nwidth\3P\1\0\2\25close_if_last_window\2\22enable_git_status\2\nsetup\rneo-tree\frequire\0", "config", "neo-tree.nvim")
+try_loadstring("\27LJ\2\n€\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\1\nwidth\3P\1\0\2\22enable_git_status\2\25close_if_last_window\2\nsetup\rneo-tree\frequire\0", "config", "neo-tree.nvim")
 time([[Config for neo-tree.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
