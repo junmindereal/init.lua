@@ -5,9 +5,9 @@ opt.nu = true
 opt.relativenumber = true
 
 -- tabs and indentation
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
@@ -15,7 +15,7 @@ opt.smartindent = true
 -- line wrapping
 opt.wrap = false
 
--- search settings 
+-- search settings
 opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
@@ -32,7 +32,7 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.colorcolumn = "80"
 
--- backspace 
+-- backspace
 opt.backspace = "indent,eol,start"
 
 -- navigation

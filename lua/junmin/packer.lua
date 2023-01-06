@@ -80,6 +80,10 @@ return require('packer').startup(function(use)
     use("windwp/nvim-autopairs")
     use("windwp/nvim-ts-autotag")
 
+    --tmux
+    use("christoomey/vim-tmux-navigator")
+    use("szw/vim-maximizer")
+
     -- file explorer
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -96,6 +100,13 @@ return require('packer').startup(function(use)
                 enable_git_status = true,
                 window = {
                     width = 80
+                },
+                filesystem = {
+                    filtered_items = {
+                        visible = true,
+                        hide_dotfiles = false,
+                        hide_gitignored = true
+                    }
                 }
             })
         end
