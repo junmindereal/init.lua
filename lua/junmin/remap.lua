@@ -30,8 +30,8 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("x", "<leader>p", [["_dP]])
 
 -- copying and deleting in the global clipboard so yank in vim and global are separated
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
-keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 keymap.set("n", "<leader>Y", [["+Y]])
 
 -- escape
