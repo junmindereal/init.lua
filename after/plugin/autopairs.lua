@@ -1,20 +1,29 @@
-local autopairs_status, autopairs = pcall(require, "nvim-autopairs")
-if not cmp_status then
+-- import nvim-autopairs safely
+local autopairs_setup, autopairs = pcall(require, "nvim-autopairs")
+if not autopairs_setup then
 	return
 end
 
+-- configure autopairs
 autopairs.setup({
-    check_ts = true,
-    ts_config = {
-        lua = { "string" }, -- don't add pairs in lua string treesitter nodes 
-        javascript = {"template_string"}, -- don't add pairs in javascript template_string
-    },
+	check_ts = true, -- enable treesitter
+	ts_config = {
+		lua = { "string" }, -- don't add pairs in lua string treesitter nodes
+		javascript = { "template_string" }, -- don't add pairs in javscript template_string treesitter nodes
+	},
 })
 
--- If you want insert `(` after select function or method item
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
+-- import nvim-autopairs completion functionality safely
+local cmp_autopairs_setup, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not cmp_autopairs_setup then
+	return
+end
+
+-- import nvim-cmp plugin safely (completions plugin)
+local cmp_setup, cmp = pcall(require, "cmp")
+if not cmp_setup then
+	return
+end
+
+-- make autopairs and completion work together
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
