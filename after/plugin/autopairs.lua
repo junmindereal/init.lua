@@ -1,4 +1,7 @@
-local autopairs = require("nvim-autopairs")
+local autopairs_status, autopairs = pcall(require, "nvim-autopairs")
+if not cmp_status then
+	return
+end
 
 autopairs.setup({
     check_ts = true,
